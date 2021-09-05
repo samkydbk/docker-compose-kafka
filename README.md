@@ -1,6 +1,15 @@
 # docker-compose-kafka
 使用docker compose 搭建kafka集群 kafka+kafka-manage + zookeeper
 
+### 创建自定义bridge网络
+docker network create --subnet=172.18.0.0/16 netkafka
+
+### docker网络操作常用命令
+docker network ls
+docker network inspect ID/NAME
+docker network create
+docker netowrk rm ID/NAME
+
 ### docker搭建kafka集群
 ![docker搭建kafka集群](https://user-images.githubusercontent.com/28728839/130782075-a6c26970-2c31-492b-aa57-52175b06eb9f.png "docker kafka集群")
 
