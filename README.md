@@ -2,7 +2,7 @@
 使用docker compose 搭建kafka集群 kafka+kafka-manage + zookeeper
 
 ### 创建自定义bridge网络
-docker network create --subnet=172.18.0.0/16 netkafka
+docker network create --driver bridge --subnet=172.18.0.0/25 --gateway 172.18.0.1 net-kafka
 
 ### docker网络操作常用命令
 docker network ls  
@@ -10,7 +10,12 @@ docker network inspect ID/NAME
 docker network create  
 docker netowrk rm ID/NAME  
 
+
+### docker搭建单机版
+运行单机版容器编排文件 docker-compose-single up -d
+
 ### docker搭建kafka集群
+
 ![docker搭建kafka集群](https://user-images.githubusercontent.com/28728839/130782075-a6c26970-2c31-492b-aa57-52175b06eb9f.png "docker kafka集群")
 
 ### 查看zookeeper集群是否正常
